@@ -9,7 +9,6 @@ let urlEndings = [".com", ".net", ".org"];
 let addressInput;
 let urlStartIndex;
 let urlFinishIndex;
-
 chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.sync.clear(function(){
         let error = chrome.runtime.lastError;
@@ -18,11 +17,9 @@ chrome.runtime.onInstalled.addListener(() => {
         }
     });
 });
-
 chrome.omnibox.onInputEntered.addListener(function(text) {
     addressInput = text;
     console.log(addressInput)
-
     for (let i = 0; i < urlBeginnings.length; i++) {
         if (addressInput.indexOf(urlBeginnings[i]) !== -1) {
             urlStartIndex = addressInput.indexOf(urlBeginnings[i]);
@@ -41,4 +38,3 @@ chrome.omnibox.onInputEntered.addListener(function(text) {
         url: addressInput
     });
 });
-
