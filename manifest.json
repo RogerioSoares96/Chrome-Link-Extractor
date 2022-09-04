@@ -1,0 +1,27 @@
+{
+    "name": "Link extractor",
+    "version": "0.1",
+    "manifest_version": 3,
+    "omnibox": { "keyword" : "le" },
+    "background": {
+        "service_worker":"background.js"
+    },
+    "action": {
+        "default_icon": {
+            "48":"static/48.png",
+            "128":"static/128.png"
+        },
+        "default_title":"Link extractor",
+        "default_popup":"popup.html"
+    },
+    "icons": {
+        "48":"static/48.png",
+        "128":"static/128.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "tabs"
+    ]
+}
